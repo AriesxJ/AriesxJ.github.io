@@ -1,0 +1,224 @@
+
+  <!Doctype html>
+<!--
+Program name: index.html
+Author: Aries Jimenez
+Date created: 6/15/2026
+Date last edited:
+Version: 1.1
+Description: Patient information form for an optometrist office
+-->
+
+<!Doctype html>
+<!--
+Program name: index.html
+Author: Aries Jimenez
+Date created: 6/15/2026
+Date last edited:
+Version: 1.1
+Description: Patient information form for an optometrist office
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Octo Optics Registration Form</title>
+
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <h1>Octo Optics</h1>
+    <p id="tagline">Online Patient Registration Form</p>
+  </header>
+
+  <main>
+
+    <form id="patientForm" name="patientForm" action="#" method="post">
+
+      <section class="top-section">
+        <div class="logo-box">
+          Logo & Brand Name Here<br>
+          Octo Optics
+        </div>
+
+        <div class="date-box">
+          Today's Date:
+          <span id="todayDate"></span>
+        </div>
+      </section>
+
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <table>
+          <tr>
+            <td class="question-label"><label for="firstName">First Name:</label></td>
+            <td><input type="text" id="firstName" name="firstName"></td>
+
+            <td><label for="middleInitial">MI:</label></td>
+            <td><input type="text" id="middleInitial" name="middleInitial" maxlength="1" class="small-input"></td>
+
+            <td><label for="lastName">Last Name:</label></td>
+            <td><input type="text" id="lastName" name="lastName"></td>
+          </tr>
+
+          <tr>
+            <td><label for="dob">Date of Birth:</label></td>
+            <td><input type="date" id="dob" name="dob"></td>
+          </tr>
+
+          <tr>
+            <td><label for="ssn">Social Security:</label></td>
+            <td><input type="password" id="ssn" name="ssn"></td>
+          </tr>
+
+          <tr>
+            <td><label for="address1">Address Line 1:</label></td>
+            <td colspan="3"><input type="text" id="address1" name="address1" class="long-input"></td>
+          </tr>
+
+          <tr>
+            <td><label for="address2">Address Line 2:</label></td>
+            <td colspan="3"><input type="text" id="address2" name="address2" class="long-input"></td>
+          </tr>
+
+          <tr>
+            <td><label for="city">City:</label></td>
+            <td><input type="text" id="city" name="city"></td>
+
+            <td><label for="state">State:</label></td>
+            <td>
+              <select id="state" name="state">
+                <option value="">Choose</option>
+                <option value="TX">TX</option>
+                <option value="CA">CA</option>
+                <option value="FL">FL</option>
+                <option value="NY">NY</option>
+              </select>
+            </td>
+
+            <td><label for="zip">Zip Code:</label></td>
+            <td><input type="text" id="zip" name="zip" class="zip-input"></td>
+          </tr>
+
+          <tr>
+            <td><label for="email">Email Address:</label></td>
+            <td><input type="email" id="email" name="email"></td>
+          </tr>
+
+          <tr>
+            <td><label for="phone">Phone Number:</label></td>
+            <td><input type="tel" id="phone" name="phone"></td>
+          </tr>
+
+          <tr>
+            <td><label for="userId">New User ID:</label></td>
+            <td><input type="text" id="userId" name="userId"></td>
+          </tr>
+
+          <tr>
+            <td><label for="password">Password:</label></td>
+            <td><input type="password" id="password" name="password"></td>
+          </tr>
+
+          <tr>
+            <td><label for="confirmPassword">Re-enter Password:</label></td>
+            <td><input type="password" id="confirmPassword" name="confirmPassword"></td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <fieldset>
+        <legend>Reason for Visit</legend>
+
+        <p>Check any that apply.</p>
+
+        <label><input type="checkbox" name="reason" value="eyeCheck"> Eye Check Up</label><br>
+        <label><input type="checkbox" name="reason" value="contacts"> Contact Lens</label><br>
+        <label><input type="checkbox" name="reason" value="glasses"> Glasses</label><br>
+        <label><input type="checkbox" name="reason" value="repair"> Glasses Repair</label><br>
+        <label><input type="checkbox" name="reason" value="other"> Other</label><br>
+
+        <label for="otherReason">Describe other reason here:</label>
+        <textarea id="otherReason" name="otherReason"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Health and Account Details</legend>
+
+        <table>
+          <tr>
+            <td>Currently have health insurance?</td>
+            <td>
+              <label><input type="radio" name="insurance" value="yes"> Yes</label>
+              <label><input type="radio" name="insurance" value="no"> No</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Are you a new patient?</td>
+            <td>
+              <label><input type="radio" name="newPatient" value="yes"> Yes</label>
+              <label><input type="radio" name="newPatient" value="no"> No</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Gender:</td>
+            <td>
+              <label><input type="radio" name="gender" value="male"> Male</label>
+              <label><input type="radio" name="gender" value="female"> Female</label>
+              <label><input type="radio" name="gender" value="other"> Other</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="screenTime">Average Daily Screen Time:</label></td>
+            <td>
+              0 hrs
+              <input type="range" id="screenTime" name="screenTime" min="0" max="12">
+              12+ hrs
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="age">Age:</label></td>
+            <td><input type="number" id="age" name="age" min="1" max="120"></td>
+          </tr>
+        </table>
+      </fieldset>    
+
+      <div class="button-area">
+        <input type="reset" value="CLEAR AND START OVER">
+        <input type="submit" value="SUBMIT FORM">
+      </div>
+          
+            
+  <footer>
+    This is a temp footer
+  </footer>
+
+  <script>
+    const today = new Date();
+    document.getElementById("todayDate").textContent = today.toLocaleDateString();
+  </script>
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
