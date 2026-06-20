@@ -1,1 +1,172 @@
 
+/*
+  Name: Aries Jimenez
+  Description: This external CSS file styles the optometrist
+  registration form page.
+*/
+
+/* Tag selector: styles the whole page */
+body {
+  background-color: #eef8f9;
+  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Tag selector: styles the page header */
+header {
+  background-color: #7fc4c9;
+  color: #102f35;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Tag selector: styles the main heading */
+h1 {
+  color: #063d47;
+  margin-bottom: 5px;
+}
+
+/* ID selector: styles the tagline under the heading */
+#tagline {
+  color: #224f56;
+  font-weight: bold;
+}
+
+/* Tag selector: controls the main page area */
+main {
+  width: 950px;
+  margin: 20px auto;
+}
+
+/* ID selector: styles the full form */
+#patientForm {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #333333;
+}
+
+/* Class selector: lays out logo and date boxes */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Class selector: styles the logo box */
+.logo-box {
+  background-color: #7fc4c9;
+  border: 1px solid #4f777d;
+  width: 440px;
+  padding: 25px;
+  text-align: center;
+}
+
+/* Class selector: styles the date box */
+.date-box {
+  background-color: #7fc4c9;
+  border: 1px solid #4f777d;
+  width: 180px;
+  padding: 18px;
+  text-align: center;
+}
+
+/* Tag selector: styles each form section */
+fieldset {
+  border: 1px solid #333333;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+/* Tag selector: styles the section titles */
+legend {
+  background-color: #7fc4c9;
+  color: #102f35;
+  border: 1px solid #4f777d;
+  padding: 5px;
+  font-weight: bold;
+}
+
+/* Tag selector: gives table cells spacing */
+td {
+  padding: 8px;
+}
+
+/* Tag selector: styles labels */
+label {
+  color: #111111;
+}
+
+/* Name selector: styles the first name input */
+input[name="firstName"] {
+  border-color: #225f66;
+}
+
+/* Tag selector: styles form boxes */
+input,
+select,
+textarea {
+  background-color: #7fc4c9;
+  border: 1px solid #4f777d;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+/* Class selector: styles the middle initial box */
+.small-input {
+  width: 30px;
+}
+
+/* Class selector: styles longer input boxes */
+.long-input {
+  width: 300px;
+}
+
+/* Class selector: styles the zip code box */
+.zip-input {
+  width: 90px;
+}
+
+/* Tag selector: styles the large typing box */
+textarea {
+  display: block;
+  width: 90%;
+  height: 110px;
+  margin-top: 10px;
+  border-radius: 12px;
+}
+
+/* Class selector: styles the button section */
+.button-area {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px dashed #333333;
+  padding-top: 18px;
+}
+
+/* Tag selector: styles the form buttons */
+input[type="submit"],
+input[type="reset"] {
+  background-color: #7fc4c9;
+  color: #102f35;
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+/* Tag selector: styles the footer */
+footer {
+  text-align: center;
+  background-color: #d8eeee;
+  padding: 15px;
+  color: #111111;
+}
+
+/* Tag selector: styles normal links */
+a {
+  color: #006b75;
+}
+
+/* Tag selector: styles visited links */
+a:visited {
+  color: #5c3f91;
+}
