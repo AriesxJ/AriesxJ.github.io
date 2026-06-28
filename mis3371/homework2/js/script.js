@@ -1,18 +1,15 @@
 
-// Runs setup functions after the page loads.
 window.onload = function () {
   displayTodayDate();
   setBirthDateRange();
   setupEventListeners();
 };
 
-// Displays today's date from the browser.
 function displayTodayDate() {
   var today = new Date();
   document.getElementById("todayDate").textContent = today.toLocaleDateString();
 }
 
-// Creates a YYYY-MM-DD date string for date input fields.
 function formatDateForInput(dateValue) {
   var year = dateValue.getFullYear();
   var month = String(dateValue.getMonth() + 1).padStart(2, "0");
@@ -21,7 +18,6 @@ function formatDateForInput(dateValue) {
   return year + "-" + month + "-" + day;
 }
 
-// Sets the birthday date range from 120 years ago through today.
 function setBirthDateRange() {
   var today = new Date();
   var oldestDate = new Date();
@@ -33,7 +29,6 @@ function setBirthDateRange() {
   dob.min = formatDateForInput(oldestDate);
 }
 
-// Connects form events to JavaScript functions.
 function setupEventListeners() {
   var form = document.getElementById("patientForm");
   var screenTime = document.getElementById("screenTime");
@@ -47,7 +42,6 @@ function setupEventListeners() {
   form.addEventListener("reset", resetFormMessages);
 }
 
-// Updates the number beside the slider while the user moves it.
 function updateScreenTime() {
   var screenTime = document.getElementById("screenTime").value;
   var label = screenTime === "12" ? "12+ hrs" : screenTime + " hrs";
@@ -55,14 +49,12 @@ function updateScreenTime() {
   document.getElementById("screenTimeValue").textContent = label;
 }
 
-// Converts the user ID to lowercase.
 function makeUserIdLowercase() {
   var userId = document.getElementById("userId");
 
   userId.value = userId.value.toLowerCase();
 }
 
-// Removes old validation messages.
 function clearErrors() {
   document.getElementById("firstNameError").textContent = "";
   document.getElementById("dobError").textContent = "";
@@ -71,7 +63,6 @@ function clearErrors() {
   document.getElementById("confirmPasswordError").textContent = "";
 }
 
-// Checks the optional reason box for double quotes.
 function validateOtherReason() {
   var otherReason = document.getElementById("otherReason").value;
 
@@ -83,7 +74,6 @@ function validateOtherReason() {
   return true;
 }
 
-// Checks password rules that need JavaScript.
 function validatePasswords() {
   var firstName = document.getElementById("firstName").value.toLowerCase();
   var lastName = document.getElementById("lastName").value.toLowerCase();
@@ -123,7 +113,6 @@ function validatePasswords() {
   return isValid;
 }
 
-// Checks the birthday range using JavaScript as an extra safety check.
 function validateBirthDate() {
   var dob = document.getElementById("dob");
   var dobError = document.getElementById("dobError");
@@ -141,7 +130,6 @@ function validateBirthDate() {
   return true;
 }
 
-// Runs before submit to catch JavaScript validation rules.
 function validateBeforeSubmit(event) {
   var form = document.getElementById("patientForm");
   var passwordsOk;
@@ -159,8 +147,7 @@ function validateBeforeSubmit(event) {
     event.preventDefault();
     form.reportValidity();
   }
-}
-// Gets all checked checkbox values for review.
+
 function getCheckedReasons() {
   var checkedBoxes = document.querySelectorAll("input[name='reason']:checked");
   var values = [];
@@ -172,21 +159,18 @@ function getCheckedReasons() {
   return values.length > 0 ? values.join(", ") : "None selected";
 }
 
-// Gets the selected radio button value.
 function getRadioValue(name) {
   var selected = document.querySelector("input[name='" + name + "']:checked");
 
   return selected ? selected.value : "Not selected";
 }
 
-// Truncates ZIP+4 to the first five digits for review display.
 function getTruncatedZip() {
   var zip = document.getElementById("zip").value;
 
   return zip.substring(0, 5);
 }
 
-// Keeps review text safe by using textContent instead of writing raw HTML.
 function addReviewLine(parent, label, value) {
   var line = document.createElement("div");
   var labelSpan = document.createElement("span");
@@ -202,7 +186,6 @@ function addReviewLine(parent, label, value) {
   parent.appendChild(line);
 }
 
-// Displays all entered form information in the review area.
 function reviewForm() {
   var form = document.getElementById("patientForm");
   var reviewContent = document.getElementById("reviewContent");
@@ -250,7 +233,6 @@ function reviewForm() {
   addReviewLine(reviewContent, "Password", "Hidden for privacy");
 }
 
-// Clears review and error messages after reset.
 function resetFormMessages() {
   setTimeout(function () {
     clearErrors();
