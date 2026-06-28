@@ -1,0 +1,162 @@
+
+body {
+  background-color: #eef8f9;
+  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+header {
+  background-color: #7fc4c9;
+  color: #102f35;
+  text-align: center;
+  padding: 20px;
+}
+
+
+h1 {
+  color: #063d47;
+  margin-bottom: 5px;
+}
+
+
+#tagline {
+  color: #224f56;
+  font-weight: bold;
+}
+
+
+main {
+  width: 950px;
+  margin: 20px auto;
+}
+
+
+#patientForm {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #333333;
+}
+
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+
+.logo-box {
+  background-color: #7fc4c9;
+  border: 1px solid #4f777d;
+  width: 440px;
+  padding: 25px;
+  text-align: center;
+}
+
+.date-box {
+  background-color: #7fc4c9;
+  border: 1px solid #4f777d;
+  width: 180px;
+  padding: 18px;
+  text-align: center;
+}
+
+
+fieldset {
+  border: 1px solid #333333;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+
+legend {
+  background-color: #7fc4c9;
+  color: #102f35;
+  border: 1px solid #4f777d;
+  padding: 5px;
+  font-weight: bold;
+}
+
+
+td {
+  padding: 8px;
+}
+
+
+label {
+  color: #111111;
+}
+
+
+input[name="firstName"] {
+  border-color: #225f66;
+}
+
+
+input,
+select,
+textarea {
+  background-color: #7fc4c9;
+  border: 1px solid #4f777d;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+
+.small-input {
+  width: 30px;
+}
+
+.long-input {
+  width: 300px;
+}
+
+.zip-input {
+  width: 90px;
+}
+
+
+textarea {
+  display: block;
+  width: 90%;
+  height: 110px;
+  margin-top: 10px;
+  border-radius: 12px;
+}
+
+
+.button-area {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px dashed #333333;
+  padding-top: 18px;
+}
+
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: #7fc4c9;
+  color: #102f35;
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+
+footer {
+  text-align: center;
+  background-color: #d8eeee;
+  padding: 15px;
+  color: #111111;
+}
+
+
+a {
+  color: #006b75;
+}
+
+
+a:visited {
+  color: #5c3f91;
+}
