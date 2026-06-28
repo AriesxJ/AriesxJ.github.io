@@ -214,7 +214,6 @@ function reviewForm() {
   addReviewLine(reviewContent, "Middle Initial", document.getElementById("middleInitial").value || "Blank");
   addReviewLine(reviewContent, "Last Name", document.getElementById("lastName").value);
   addReviewLine(reviewContent, "Date of Birth", document.getElementById("dob").value);
-  addReviewLine(reviewContent, "Patient ID Number", "Hidden for privacy");
   addReviewLine(reviewContent, "Email", document.getElementById("email").value);
   addReviewLine(reviewContent, "Phone", document.getElementById("phone").value);
   addReviewLine(reviewContent, "Address Line 1", document.getElementById("address1").value);
@@ -230,8 +229,8 @@ function reviewForm() {
   addReviewLine(reviewContent, "Average Daily Screen Time", screenTime);
   addReviewLine(reviewContent, "Age", document.getElementById("age").value || "Blank");
   addReviewLine(reviewContent, "Desired User ID", document.getElementById("userId").value);
-  addReviewLine(reviewContent, "Social Security", "Hidden for privacy");
-  addReviewLine(reviewContent, "Password", "Hidden for privacy");
+  addReviewLine(reviewContent, "Social Security", "Hidden");
+  addReviewLine(reviewContent, "Password", "Hidden");
 }
 
 function resetFormMessages() {
