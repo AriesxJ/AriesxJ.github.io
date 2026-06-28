@@ -148,6 +148,7 @@ function validateBeforeSubmit(event) {
     event.preventDefault();
     form.reportValidity();
   }
+}
 
 function getCheckedReasons() {
   var checkedBoxes = document.querySelectorAll("input[name='reason']:checked");
