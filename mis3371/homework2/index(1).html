@@ -104,3 +104,216 @@ This page builds on Homework 1 by adding external js, validation, and a review b
                 title="Optional. If entered, use 2 to 30 characters.">
             </td>
           </tr>
+                    <tr>
+            <td class="question-label"><label for="city">City:</label></td>
+            <td>
+              <input type="text" id="city" name="city" minlength="2" maxlength="30" required
+                title="Enter your city. Use 2 to 30 characters.">
+            </td>
+
+            <td class="question-label"><label for="state">State:</label></td>
+            <td>
+              <select id="state" name="state" required title="Choose a state from the list.">
+                <option value="">Choose</option>
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AZ">AZ</option>
+                <option value="AR">AR</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DE">DE</option>
+                <option value="DC">DC</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="IA">IA</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="ME">ME</option>
+                <option value="MD">MD</option>
+                <option value="MA">MA</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MS">MS</option>
+                <option value="MO">MO</option>
+                <option value="MT">MT</option>
+                <option value="NE">NE</option>
+                <option value="NV">NV</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>
+                <option value="NY">NY</option>
+                <option value="NC">NC</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="PR">PR</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="VA">VA</option>
+                <option value="WA">WA</option>
+                <option value="WV">WV</option>
+                <option value="WI">WI</option>
+                <option value="WY">WY</option>
+              </select>
+            </td>
+
+            <td class="question-label"><label for="zip">Zip Code:</label></td>
+            <td>
+              <input type="text" id="zip" name="zip" class="zip-input" maxlength="10" required
+                pattern="[0-9]{5}(-[0-9]{4})?"
+                title="Enter 5 digits or ZIP+4 format, like 77002 or 77002-1234.">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="question-label"><label for="email">Email Address:</label></td>
+            <td>
+              <input type="email" id="email" name="email" required
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[A-Za-z]{2,}"
+                title="Enter an email address in the format name@domain.tld.">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="question-label"><label for="phone">Phone Number:</label></td>
+            <td>
+              <input type="tel" id="phone" name="phone" maxlength="12" required
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="000-000-0000"
+                title="Enter phone number in this format: 000-000-0000.">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="question-label"><label for="userId">New User ID:</label></td>
+            <td>
+              <input type="text" id="userId" name="userId" minlength="5" maxlength="30" required
+                pattern="[A-Za-z][A-Za-z0-9_-]{4,29}"
+                title="Enter 5 to 30 characters. Start with a letter. Use letters, numbers, underscore, or dash. No spaces.">
+              <span id="userIdError" class="error-message"></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="question-label"><label for="password">Password:</label></td>
+            <td>
+              <input type="password" id="password" name="password" minlength="8" maxlength="30" required
+                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%^&amp;*()_+=.,`~/-]).{8,30}"
+                title="Enter 8 to 30 characters with uppercase, lowercase, number, and special character. Do not use quotes.">
+              <span id="passwordError" class="error-message"></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="question-label"><label for="confirmPassword">Re-enter Password:</label></td>
+            <td>
+              <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" maxlength="30" required
+                title="Re-enter the same password.">
+              <span id="confirmPasswordError" class="error-message"></span>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <fieldset>
+        <legend>Reason for Visit</legend>
+
+        <p>Check any that apply.</p>
+
+        <label><input type="checkbox" name="reason" value="Eye Check Up" title="Select if you need an eye check up."> Eye Check Up</label><br>
+        <label><input type="checkbox" name="reason" value="Contact Lens" title="Select if you need contact lens help."> Contact Lens</label><br>
+        <label><input type="checkbox" name="reason" value="Glasses" title="Select if you need glasses."> Glasses</label><br>
+        <label><input type="checkbox" name="reason" value="Glasses Repair" title="Select if you need glasses repair."> Glasses Repair</label><br>
+        <label><input type="checkbox" name="reason" value="Eye Strain" title="Select if you are having eye strain."> Eye Strain</label><br>
+
+        <label for="otherReason">Describe other reason here:</label>
+        <textarea id="otherReason" name="otherReason" maxlength="300"
+          title="Optional. Describe your reason for visit. Do not use quotation marks."></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Health and Account Details</legend>
+
+        <table>
+          <tr>
+            <td class="question-label">Currently have health insurance?</td>
+            <td>
+              <label><input type="radio" name="insurance" value="Yes" required title="Choose yes if you have health insurance."> Yes</label>
+              <label><input type="radio" name="insurance" value="No" title="Choose no if you do not have health insurance."> No</label>
+              <label><input type="radio" name="insurance" value="Unsure" title="Choose unsure if you do not know."> Unsure</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="question-label">Are you a new patient?</td>
+            <td>
+              <label><input type="radio" name="newPatient" value="Yes" required title="Choose yes if you are a new patient."> Yes</label>
+              <label><input type="radio" name="newPatient" value="No" title="Choose no if you are a returning patient."> No</label>
+              <label><input type="radio" name="newPatient" value="Unsure" title="Choose unsure if you do not know."> Unsure</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="question-label">Gender:</td>
+            <td>
+              <label><input type="radio" name="gender" value="Male" required title="Choose male."> Male</label>
+              <label><input type="radio" name="gender" value="Female" title="Choose female."> Female</label>
+              <label><input type="radio" name="gender" value="Other" title="Choose other."> Other</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="question-label"><label for="screenTime">Average Daily Screen Time:</label></td>
+            <td>
+              0 hrs
+              <input type="range" id="screenTime" name="screenTime" min="0" max="12" value="4"
+                title="Move the slider to show your average daily screen time.">
+              12+ hrs
+              <span id="screenTimeValue">4 hrs</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="question-label"><label for="age">Age:</label></td>
+            <td>
+              <input type="number" id="age" name="age" min="1" max="120"
+                title="Optional. Enter your age from 1 to 120.">
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <div class="button-area">
+        <input type="reset" value="CLEAR AND START OVER" title="Clear the form.">
+        <input type="button" id="reviewButton" value="REVIEW" title="Review your information before submitting.">
+        <input type="submit" value="SUBMIT FORM" title="Submit the form.">
+      </div>
+    </form>
+
+    <div id="reviewArea">
+      <h2>Review Your Information</h2>
+      <div id="reviewContent">
+        <p>Your entered information will appear here after you click Review.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    If there are any questions, call this made up number at #1-800-420-1738.
+  </footer>
+
+  <script src="js/homework2.js"></script>
+</body>
+</html>
