@@ -74,39 +74,84 @@ function validateOtherReason() {
   return true;
 }
 
+function getPasswordRuleMessage(password) {
+  var missingRules = [];
+
+  if (password.length < 8 || password.length > 30) {
+    missingRules.push("8 to 30 characters");
+  }
+
+  if (!/[A-Z]/.test(password)) {
+    missingRules.push("1 uppercase letter");
+  }
+
+  if (!/[a-z]/.test(password)) {
+    missingRules.push("1 lowercase letter");
+  }
+
+  if (!/[0-9]/.test(password)) {
+    missingRules.push("1 number");
+  }
+
+  if (!/[!@#%^&*()_+=.,`~/-]/.test(password)) {
+    missingRules.push("1 special character");
+  }
+
+  if (password.indexOf('"') !== -1 || password.indexOf("'") !== -1) {
+    missingRules.push("no quotation marks");
+  }
+
+  if (missingRules.length > 0) {
+    return "Password needs: " + missingRules.join(", ") + ".";
+  }
+
+  return "";
+}
+
 function validatePasswords() {
   var firstName = document.getElementById("firstName").value.toLowerCase();
   var lastName = document.getElementById("lastName").value.toLowerCase();
   var userId = document.getElementById("userId").value.toLowerCase();
-  var password = document.getElementById("password").value;
-  var confirmPassword = document.getElementById("confirmPassword").value;
+  var passwordInput = document.getElementById("password");
+  var confirmPasswordInput = document.getElementById("confirmPassword");
+  var password = passwordInput.value;
+  var confirmPassword = confirmPasswordInput.value;
   var passwordLower = password.toLowerCase();
   var passwordError = document.getElementById("passwordError");
   var confirmPasswordError = document.getElementById("confirmPasswordError");
+  var passwordRuleMessage = getPasswordRuleMessage(password);
   var isValid = true;
 
-  if (password.indexOf('"') !== -1 || password.indexOf("'") !== -1) {
-    passwordError.textContent = "Password cannot contain quotation marks.";
+  passwordInput.setCustomValidity("");
+  confirmPasswordInput.setCustomValidity("");
+
+  if (passwordRuleMessage !== "") {
+    passwordError.textContent = passwordRuleMessage;
+    passwordInput.setCustomValidity(passwordRuleMessage);
     isValid = false;
   }
 
   if (password !== confirmPassword) {
     confirmPasswordError.textContent = "Passwords do not match.";
+    confirmPasswordInput.setCustomValidity("Passwords do not match.");
     isValid = false;
   }
 
   if (userId !== "" && passwordLower.indexOf(userId) !== -1) {
     passwordError.textContent = "Password cannot contain your user ID.";
+    passwordInput.setCustomValidity("Password cannot contain your user ID.");
     isValid = false;
   }
 
   if (firstName !== "" && passwordLower.indexOf(firstName) !== -1) {
     passwordError.textContent = "Password cannot contain your first name.";
+    passwordInput.setCustomValidity("Password cannot contain your first name.");
     isValid = false;
   }
 
   if (lastName !== "" && passwordLower.indexOf(lastName) !== -1) {
     passwordError.textContent = "Password cannot contain your last name.";
+    passwordInput.setCustomValidity("Password cannot contain your last name.");
     isValid = false;
   }
 
@@ -148,7 +193,6 @@ function validateBeforeSubmit(event) {
     form.reportValidity();
   }
 }
-
 function getCheckedReasons() {
   var checkedBoxes = document.querySelectorAll("input[name='reason']:checked");
   var values = [];
@@ -214,6 +258,7 @@ function reviewForm() {
   addReviewLine(reviewContent, "Middle Initial", document.getElementById("middleInitial").value || "Blank");
   addReviewLine(reviewContent, "Last Name", document.getElementById("lastName").value);
   addReviewLine(reviewContent, "Date of Birth", document.getElementById("dob").value);
+  addReviewLine(reviewContent, "Patient ID Number", "Hidden for privacy");
   addReviewLine(reviewContent, "Email", document.getElementById("email").value);
   addReviewLine(reviewContent, "Phone", document.getElementById("phone").value);
   addReviewLine(reviewContent, "Address Line 1", document.getElementById("address1").value);
@@ -229,8 +274,8 @@ function reviewForm() {
   addReviewLine(reviewContent, "Average Daily Screen Time", screenTime);
   addReviewLine(reviewContent, "Age", document.getElementById("age").value || "Blank");
   addReviewLine(reviewContent, "Desired User ID", document.getElementById("userId").value);
-  addReviewLine(reviewContent, "Social Security", "Hidden");
-  addReviewLine(reviewContent, "Password", "Hidden");
+  addReviewLine(reviewContent, "Social Security", "Hidden for privacy");
+  addReviewLine(reviewContent, "Password", "Hidden for privacy");
 }
 
 function resetFormMessages() {
