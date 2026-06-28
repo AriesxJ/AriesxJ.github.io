@@ -6,7 +6,6 @@ body {
   margin: 0;
 }
 
-
 header {
   background-color: #7fc4c9;
   color: #102f35;
@@ -14,24 +13,20 @@ header {
   padding: 20px;
 }
 
-
 h1 {
   color: #063d47;
   margin-bottom: 5px;
 }
-
 
 #tagline {
   color: #224f56;
   font-weight: bold;
 }
 
-
 main {
   width: 950px;
   margin: 20px auto;
 }
-
 
 #patientForm {
   background-color: white;
@@ -39,13 +34,11 @@ main {
   border: 1px solid #333333;
 }
 
-
 .top-section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
-
 
 .logo-box {
   background-color: #7fc4c9;
@@ -63,13 +56,11 @@ main {
   text-align: center;
 }
 
-
 fieldset {
   border: 1px solid #333333;
   margin-bottom: 15px;
   padding: 15px;
 }
-
 
 legend {
   background-color: #7fc4c9;
@@ -79,21 +70,23 @@ legend {
   font-weight: bold;
 }
 
-
 td {
   padding: 8px;
+  vertical-align: top;
 }
 
+.question-label {
+  text-align: right;
+  white-space: nowrap;
+}
 
 label {
   color: #111111;
 }
 
-
 input[name="firstName"] {
   border-color: #225f66;
 }
-
 
 input,
 select,
@@ -103,7 +96,6 @@ textarea {
   border-radius: 4px;
   padding: 5px;
 }
-
 
 .small-input {
   width: 30px;
@@ -117,7 +109,6 @@ textarea {
   width: 90px;
 }
 
-
 textarea {
   display: block;
   width: 90%;
@@ -126,6 +117,18 @@ textarea {
   border-radius: 12px;
 }
 
+#screenTimeValue {
+  color: #063d47;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+.error-message {
+  color: #a30000;
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+}
 
 .button-area {
   display: flex;
@@ -134,15 +137,33 @@ textarea {
   padding-top: 18px;
 }
 
-
 input[type="submit"],
-input[type="reset"] {
+input[type="reset"],
+input[type="button"] {
   background-color: #7fc4c9;
   color: #102f35;
   padding: 12px 30px;
   cursor: pointer;
 }
 
+#reviewArea {
+  background-color: white;
+  border: 1px solid #333333;
+  margin-top: 18px;
+  padding: 15px;
+}
+
+#reviewArea h2 {
+  color: #063d47;
+}
+
+.review-line {
+  margin-bottom: 8px;
+}
+
+.review-label {
+  font-weight: bold;
+}
 
 footer {
   text-align: center;
@@ -151,11 +172,9 @@ footer {
   color: #111111;
 }
 
-
 a {
   color: #006b75;
 }
-
 
 a:visited {
   color: #5c3f91;
