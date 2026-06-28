@@ -1,3 +1,4 @@
+alert("JavaScript connected?");
 
 window.onload = function () {
   displayTodayDate();
