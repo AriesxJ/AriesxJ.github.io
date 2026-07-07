@@ -56,14 +56,6 @@ main {
   text-align: center;
 }
 
-.help-message {
-  color: #224f56;
-  display: block;
-  font-size: 12px;
-  margin-top: 4px;
-  max-width: 330px;
-}
-
 fieldset {
   border: 1px solid #333333;
   margin-bottom: 15px;
@@ -138,6 +130,14 @@ textarea {
   margin-top: 4px;
 }
 
+.help-message {
+  color: #224f56;
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+  max-width: 330px;
+}
+
 .button-area {
   display: flex;
   justify-content: space-around;
@@ -152,6 +152,14 @@ input[type="button"] {
   color: #102f35;
   padding: 12px 30px;
   cursor: pointer;
+}
+
+#submitButton {
+  display: none;
+}
+
+#submitButton.ready {
+  display: inline-block;
 }
 
 #reviewArea {
